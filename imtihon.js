@@ -3,7 +3,7 @@ let header__texts = document.querySelector(".header__texts")
 header.forEach((header) => {
     let box = document.createElement("p");
     box.innerHTML = `
-    <p>${header}</p>
+    <p class="header__nav">${header}</p>
     `
     header__texts.appendChild(box);
 })
@@ -107,22 +107,22 @@ let s3Text2 = [
         third: "annual growth rate.",
     }
 ]
-let textONE = document.getElementById("section3__js")
+let textFirst = document.getElementById("section3__div")
 s3Text.forEach(item => {
-    let newtext = document.createElement("div");
-    newtext.innerHTML = `<div><p class="textjs1">${item.first}</p> <p class="small__text_style">${item.second}</p> <p class="small__text_style">${item.third}</p> </div>`;
-    textONE.appendChild(newtext);
+    let newText = document.createElement("div");
+    newText.innerHTML = `<div><p class="s3text">${item.first}</p> <p class="small__text_style">${item.second}</p> <p class="small__text_style">${item.third}</p> </div>`;
+    textFirst.appendChild(newText);
 })
-let textTWO = document.getElementById("section3__js2")
+let textSecond = document.getElementById("section3__div1")
 s3Text2.forEach(item => {
-    let newtext2 = document.createElement("div");
-    newtext2.innerHTML = `
-    <div><p class="textjs1">${item.first}</p> <p class="small__text_style">${item.second}</p> <p class="small__text_style">${item.third}</p> </div>
+    let newText2 = document.createElement("div");
+    newText2.innerHTML = `
+    <div><p class="s3text">${item.first}</p> <p class="small__text_style">${item.second}</p> <p class="small__text_style">${item.third}</p> </div>
     `
-    textTWO.appendChild(newtext2);
+    textSecond.appendChild(newText2);
 })
 
-
+let remove = document.getElementById("delete")
 let form = document.getElementById("myForm")
 let input1 = document.getElementById("input1")
 let input2 = document.getElementById("input2")
@@ -204,6 +204,16 @@ form.addEventListener("submit", (e) => {
         input2.value = ""
         input3.value = ""
     }
+})
+remove.addEventListener("click", () => {
+    function remove() {
+        const wrapper = [sWrap1, sWrap2, sWrap3, sWrap4, sWrap5, sWrap6];
+        wrapper.forEach(wrap => wrap.style.display = "none");
+        return;
+    }
+
+    localStorage.clear()
+    remove()
 })
 
 let element = [
