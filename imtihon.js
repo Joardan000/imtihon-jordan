@@ -80,6 +80,18 @@ let s3Text = [
         third: "annual growth rate.",
     },
     {
+        first: "$20bn",
+        second: "Qubit's top customers",
+        third: "annual growth rate.",
+    },
+    {
+        first: "364",
+        second: "Qubit's top customers",
+        third: "annual growth rate.",
+    }
+]
+let s3Text2 = [
+    {
         first: "9.5m",
         second: "Qubit's top customers",
         third: "annual growth rate.",
@@ -88,21 +100,9 @@ let s3Text = [
         first: "4.4m",
         second: "Qubit's top customers",
         third: "annual growth rate.",
-    }
-]
-let s3Text2 = [
+    },
     {
         first: "$1.6bn",
-        second: "Qubit's top customers",
-        third: "annual growth rate.",
-    },
-    {
-        first: "$20bn",
-        second: "Qubit's top customers",
-        third: "annual growth rate.",
-    },
-    {
-        first: "364",
         second: "Qubit's top customers",
         third: "annual growth rate.",
     }
@@ -211,7 +211,7 @@ remove.addEventListener("click", () => {
         wrapper.forEach(wrap => wrap.style.display = "none");
         return;
     }
-
+    location.reload()
     localStorage.clear()
     remove()
 })
@@ -255,7 +255,7 @@ let element = [
     }
 ]
 let textElement = document.getElementById("section_element_wrapper")
-element.forEach(item => {
+element.forEach((item, index) => {
     let box = document.createElement("div");
     let img = document.createElement("img");
     img.src = item.src;
@@ -268,6 +268,9 @@ element.forEach(item => {
     `
     box.appendChild(box2);
     textElement.appendChild(box);
+    if (index === 4) {
+        box2.querySelector(".element__text").style.width = "276px";
+    }
 })
 
 let fText1 = document.getElementById("footerText1")
